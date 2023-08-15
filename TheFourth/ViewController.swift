@@ -13,9 +13,15 @@ class ViewController: UIViewController {
         print("ViewController deinit <===")
     }
     
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//        print("===> ViewController init")
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("===> ViewController'view did load.")
+
         self.view.backgroundColor = .yellow
         self.title = "首頁"
         self.navigationController?.navigationBar.backgroundColor = .lightGray
@@ -43,7 +49,6 @@ class ViewController: UIViewController {
         myBtn.backgroundColor = .systemBlue
         myBtn.addTarget(self, action: #selector(toAirticle), for: .touchUpInside)
         self.view.addSubview(myBtn)
-          
     }
 
     @objc func doSomeTh() {
@@ -51,11 +56,13 @@ class ViewController: UIViewController {
     }
     
     @objc func toSetting() {
-        self.navigationController?.pushViewController(SettingViewController(), animated: true)
+        self.navigationController?.pushViewController(SettingViewController(),
+                                                      animated: true)
     }
     
     @objc func toAirticle() {
-        self.navigationController?.pushViewController(AirticleViewController(), animated: true)
+        self.navigationController?.pushViewController(AirticleViewController(),
+                                                      animated: true)
     }
 
 }

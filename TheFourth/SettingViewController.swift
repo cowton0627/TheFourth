@@ -13,17 +13,23 @@ class SettingViewController: UIViewController {
         print("SettingViewController deinit <===")
     }
     
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//        print("===> SettingViewController init")
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("===> SettingViewController'view did load")
         
         self.view.backgroundColor = .red
         self.title = "Setting"
-        self.navigationController?.navigationBar.backgroundColor = .brown
-        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.backgroundColor = .green
+//        self.navigationController?.navigationBar.isTranslucent = false
         
-        let myUIView = UIView(frame: CGRect(
-          x: 0, y: 0, width: 30, height: 30))
-        myUIView.backgroundColor = .purple
+        let myUIView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        myUIView.layer.cornerRadius = 5
+        myUIView.backgroundColor = .red
         let rightButton = UIBarButtonItem(customView: myUIView)
         self.navigationItem.rightBarButtonItem = rightButton
         
